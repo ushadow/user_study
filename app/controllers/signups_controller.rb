@@ -82,12 +82,5 @@ class SignupsController < ApplicationController
       format.html { redirect_to(signups_url) }
       format.xml  { head :ok }
     end
-  end
-  
-  def authenticate
-    authenticate_or_request_with_http_basic do |id, password| 
-      id == "yingyin" && password == "isawesome"
-    end
-  end
-  private :authenticate
+  end  
 end

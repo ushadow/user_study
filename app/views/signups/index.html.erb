@@ -11,7 +11,7 @@
   <tr>
     <td><%=h signup.name %></td>
     <td><%=h signup.email %></td>
-    <td><%=h signup.timeslot_id %></td>
+    <td><%=h signup.timeslot.name %></td>
     <td><%= link_to 'Show', signup %></td>
     <td><%= link_to 'Edit', edit_signup_path(signup) %></td>
     <td><%= link_to 'Destroy', signup, :confirm => 'Are you sure?', :method => :delete %></td>

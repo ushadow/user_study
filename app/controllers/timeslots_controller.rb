@@ -1,4 +1,6 @@
 class TimeslotsController < ApplicationController
+  before_filter :authenticate
+
   # GET /timeslots
   # GET /timeslots.xml
   def index
