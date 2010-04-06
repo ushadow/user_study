@@ -1,4 +1,5 @@
 class SignupsController < ApplicationController
+  before_filter :authenticate, :only => :index
   # GET /signups
   # GET /signups.xml
   def index
@@ -82,4 +83,11 @@ class SignupsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  def authenticate
+    authenticate_or_request_with_http_basic do |id, password| 
+      id == "yingyin" && password == "isawesome"
+    end
+  end
+  private :authenticate
 end
