@@ -1,3 +1,4 @@
+require "set"
 # Be sure to restart your server when you modify this file
 
 # Specifies gem version of Rails to use when vendor/rails is not present
@@ -38,4 +39,20 @@ Rails::Initializer.run do |config|
   # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
   # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}')]
   # config.i18n.default_locale = :de
+ 
 end
+
+ActionMailer::Base.raise_delivery_errors = true
+ActionMailer::Base.perform_deliveries = true  
+ActionMailer::Base.delivery_method = :smtp
+ActionMailer::Base.smtp_settings = {
+:enable_starttls_auto => true,
+:tls => true,
+:address => "smtp.gmail.com",
+:port => 587,
+:domain => 'gmail.com',
+:user_name => "yingyin.shadow@gmail.com",
+:password => "mail_server",
+:authentication => :plain
+}
+

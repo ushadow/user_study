@@ -46,6 +46,7 @@ class SignupsController < ApplicationController
     respond_to do |format|
       if @signup.save
         flash[:notice] = 'Signup was successfully created.'
+        Emailer.deliver_confirmation(@signup) 
         format.html { redirect_to(@signup) }
         format.xml  { render :xml => @signup, :status => :created, :location => @signup }
       else
