@@ -5,7 +5,7 @@
 	<h4>Location</h4>
 	Buiding <a href = "http://whereis.mit.edu/?go=37" target = "_blank">37</a> room
 	<h4>Duration</h4>
-	About 30 minuites
+	About 30 minuites with a reward of 1 movie ticket.
 	<div class = "add_border"></div>
 	<h4>Sign up</h4>
 	<p class = "small_font">(All fields are required.)</p>
@@ -13,7 +13,7 @@
   <p>
     <%= f.label :name %><br />
     <%= f.text_field :name %>
-  </p>
+	</p>
   <p>
     <%= f.label :email %><br />
     <%= f.text_field :email %>
@@ -22,9 +22,8 @@
     Choose <%= f.label :timeslot_id %><br />
     <%= f.select :timeslot_id, Timeslot.all.select { |t| t.openings_left > 0 }.map { |t| [t.name, t.id] } %>
   </p>
-  <p>
-  	<div class = "uiButton">
-    <%= f.submit 'Submit' %>
-  	</div>
-  </p>
+
+	<div class = "uiButton">
+  	<%= f.submit 'Submit' %>
+	</div>
 <% end %>

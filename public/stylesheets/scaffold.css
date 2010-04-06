@@ -17,7 +17,7 @@ body {
 	padding: 2px 0 45px 340px;
 	margin: auto;
 	border-style: none;
-	height: 100%;
+	min-height: 520px;
 }
 
 #footer {

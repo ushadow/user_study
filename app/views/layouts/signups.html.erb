@@ -6,8 +6,9 @@
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
   <title>Signups: <%= controller.action_name %></title>
   <%= stylesheet_link_tag 'scaffold' %>
+	<%= javascript_include_tag :defaults %>
 </head>
-<body>
+<body onload="setFocus('signup_name')">
 <div id = "contents">
 	<div id = "header">
 		user study signup
