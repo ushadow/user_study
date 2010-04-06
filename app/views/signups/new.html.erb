@@ -1,0 +1,21 @@
+<h1>New signup</h1>
+
+<% form_for(@signup) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.label :timeslot_id %><br />
+    <%= f.select :timeslot_id, Timeslot.all.select { |t| t.openings_left > 0 }.map { |t| [t.name, t.id] } %>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>

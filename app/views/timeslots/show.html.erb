@@ -1,0 +1,13 @@
+<p>
+  <b>Name:</b>
+  <%=h @timeslot.name %>
+</p>
+
+<p>
+  <b>Openings:</b>
+  <%=h @timeslot.openings %>
+</p>
+
+
+<%= link_to 'Edit', edit_timeslot_path(@timeslot) %> |
+<%= link_to 'Back', timeslots_path %>
