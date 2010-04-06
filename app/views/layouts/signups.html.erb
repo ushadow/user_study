@@ -8,10 +8,16 @@
   <%= stylesheet_link_tag 'scaffold' %>
 </head>
 <body>
-
+<div id = "contents">
+	<div id = "header">
+		user study signup
+	</div>
+	<div id = "main">
 <p style="color: green"><%= flash[:notice] %></p>
 
 <%= yield %>
-
+	</div>
+	<div id = "footer"></div>
+</div>
 </body>
 </html>

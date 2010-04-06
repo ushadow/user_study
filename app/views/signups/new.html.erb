@@ -1,8 +1,15 @@
-<h1>New signup</h1>
-
 <% form_for(@signup) do |f| %>
-  <%= f.error_messages %>
 
+	<h4>Title</h4>
+	Towards an intelligent multimodal interface
+	<h4>Location</h4>
+	Buiding <a href = "http://whereis.mit.edu/?go=37" target = "_blank">37</a> room
+	<h4>Duration</h4>
+	About 30 minuites
+	<div class = "add_border"></div>
+	<h4>Sign up</h4>
+	<p class = "small_font">(All fields are required.)</p>
+	<%= f.error_messages %>
   <p>
     <%= f.label :name %><br />
     <%= f.text_field :name %>
@@ -12,10 +19,12 @@
     <%= f.text_field :email %>
   </p>
   <p>
-    <%= f.label :timeslot_id %><br />
+    Choose <%= f.label :timeslot_id %><br />
     <%= f.select :timeslot_id, Timeslot.all.select { |t| t.openings_left > 0 }.map { |t| [t.name, t.id] } %>
   </p>
   <p>
-    <%= f.submit 'Create' %>
+  	<div class = "uiButton">
+    <%= f.submit 'Submit' %>
+  	</div>
   </p>
 <% end %>
