@@ -63,8 +63,8 @@ body {
 
 body, p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
-  font-size:   14px;
-  line-height: 16px;
+  font-size:   15px;
+  line-height: 18px;
 }
 
 h4 {
@@ -76,11 +76,11 @@ h4 {
 }
 
 input {
-	margin: 15px 0 5px 0;
+	margin: 10px 0 5px 0;
 }
 
 select {
-	margin: 15px 0 5px 0;
+	margin: 10px 0 5px 0;
 	font-size: 13px;
 }
 
