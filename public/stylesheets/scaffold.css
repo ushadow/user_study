@@ -42,7 +42,7 @@ body {
 
 .add_border {
 	border-bottom: 1px solid #CCCCCC;
-	max-width: 800px;
+	/*max-width: 800px;*/
 	padding: 10px;
 }
 
