@@ -55,8 +55,8 @@ body {
 	font-family:'Lucida Grande',Tahoma,Verdana,Arial,sans-serif;
 	font-size:	13px;
 	font-weight:bold;
-	margin:0;
-	outline:medium none;
+	margin: 0;
+	outline: medium none;
 	padding:	2px 0px 2px 1px;
 	white-space:nowrap;
 }
@@ -75,16 +75,12 @@ h4 {
 	font-size: smaller;
 }
 
-label {
-	margin: 0 0 5px 0;
-}
-
 input {
-	margin: 5px 0 0 0;
+	margin: 15px 0 5px 0;
 }
 
 select {
-	margin: 5px 0 0 0;
+	margin: 15px 0 5px 0;
 	font-size: 13px;
 }
 
