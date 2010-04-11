@@ -3,7 +3,7 @@ class SignupsController < ApplicationController
   # GET /signups
   # GET /signups.xml
   def index
-    @signups = Signup.all
+    @signups = Signup.all.sort_by { |signup| signup.timeslot.name}
 
     respond_to do |format|
       format.html # index.html.erb
