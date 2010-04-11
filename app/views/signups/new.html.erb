@@ -1,19 +1,6 @@
 <% form_for(@signup) do |f| %>
 
-	<h4>Title</h4>
-	Natural Behaviour in Urban Search and Rescue Command and Control
-	<h4>Description</h4>
-	The Multimodal Understanding Group at MIT CSAIL is conducting a user study to 
-	observe how people interact naturally with a digital map on a tabletop display. 
-	You can help with our research by participating the study, if you are over 18
-	years old, and are able to describe commands in English and make gestures.
-
-	<h4>Location</h4>
-	Building <a href = "http://whereis.mit.edu/?go=37" target = "_blank">37</a> room 307
-	<h4>Duration</h4>
-	About 30 minutes with a reward of 1 AMC Gold movie ticket.
-	<div class = "add_border"></div>
-	<h4>Sign up</h4>
+	<h4>One AMC Gold movie ticket for 30 min of your time.</h4>
 	<p class = "small_font">(All fields are required.)</p>
 	<%= f.error_messages %>
   <p>
@@ -32,4 +19,15 @@
 	<div class = "uiButton">
   	<%= f.submit 'Submit' %>
 	</div>
+	<div class = "add_border"></div>
+	<h4>Study Title</h4>
+	Natural Behaviour in Urban Search and Rescue Command and Control
+	<h4>Location & Duration</h4>
+	Study takes place at <strong>building <a href = "http://whereis.mit.edu/?go=37"
+	 target = "_blank">37</a> room 307</strong>, and lasts about 30 min.
+	<h4>Description</h4>
+	The Multimodal Understanding Group at MIT CSAIL is conducting a user study to 
+	observe how people interact naturally with a digital map on a tabletop display. 
+	You can help with our research by participating the study, if you are over 18
+	years old, and are able to describe commands in English and make gestures.
 <% end %>

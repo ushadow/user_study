@@ -55,6 +55,11 @@ class SignupsController < ApplicationController
       end
     end
   end
+  
+  def remind
+    @signup = Signup.find(params[:id])
+    Emailer.deliver_reminder(@signup)
+  end
 
   # PUT /signups/1
   # PUT /signups/1.xml

@@ -1,5 +1,5 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :signups
+  map.resources :signups, :member => { :remind => :put }
 
   map.resources :timeslots
 
