@@ -3,7 +3,7 @@ class SignupsController < ApplicationController
   # GET /signups
   # GET /signups.xml
   def index
-    @signups = Signup.all.sort_by { |signup| signup.timeslot.name}
+    @signups = Signup.all(:include => :timeslot, :order => "timeslots.name")
 
     respond_to do |format|
       format.html # index.html.erb
@@ -59,6 +59,8 @@ class SignupsController < ApplicationController
   def remind
     @signup = Signup.find(params[:id])
     Emailer.deliver_reminder(@signup)
+    flash[:notice] = "Reminder for #{@signup.email} delivered"
+    redirect_to signups_path
   end
 
   # PUT /signups/1
