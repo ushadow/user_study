@@ -1,33 +1,19 @@
-<% form_for(@signup) do |f| %>
+<p><strong>One AMC Gold movie ticket for 30 min of your time.</strong></p>
 
-	<p><strong>One AMC Gold movie ticket for 30 min of your time.</strong></p>
-	<p class = "small_font">(All fields are required.)</p>
-	<%= f.error_messages %>
-  <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-	</p>
-  <p>
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
-  </p>
-  <p>
-    Choose <%= f.label :timeslot_id %><br />
-    <%= f.select :timeslot_id, Timeslot.all.select { |t| t.openings_left > 0 }.map { |t| [t.name, t.id] } %>
-  </p>
+<%= render 'form' %>
 
-	<div class = "uiButton">
-  	<%= f.submit 'Submit' %>
-	</div>
-	<div class = "add_border"></div>
-	<h4>Study Title</h4>
-	Natural Interaction in Urban Search and Rescue Command and Control
-	<h4>Location & Duration</h4>
-	Study takes place at <strong>building <a href = "http://whereis.mit.edu/?go=37"
-	 target = "_blank">37</a> room 307</strong>, and lasts about 30 min.
-	<h4>Description</h4>
-	The Multimodal Understanding Group at MIT CSAIL is conducting a user study to 
-	observe how people interact naturally with a digital map on a tabletop display. 
-	You can help with our research by participating the study, if you are over 18
-	years old, and are able to describe commands in English and make gestures.
-<% end %>
+<div class = "add_border"></div>
+<h4>Study Title</h4>
+<p>
+  Natural Interaction in Urban Search and Rescue Command and Control
+</p>
+<h4>Location & Duration</h4>
+<p>
+  Study takes place at <strong>building <a href = "http://whereis.mit.edu/?go=37"
+   target = "_blank">37</a> room 307</strong>, and lasts about 30 min.
+  <h4>Description</h4>
+  The Multimodal Understanding Group at MIT CSAIL is conducting a user study to 
+  observe how people interact naturally with a digital map on a tabletop display. 
+  You can help with our research by participating the study, if you are over 18
+  years old, and are able to describe commands in English and make gestures.
+</p>

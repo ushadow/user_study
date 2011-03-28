@@ -1,0 +1,16 @@
+<% form_for(@timeslot) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :openings %><br />
+    <%= f.number_field :openings, :min => 1, :placeholder => '1',
+                       :autofocus => true %>
+  </p>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name, :placeholder => 'Monday 3/21, 5pm' %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

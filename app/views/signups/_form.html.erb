@@ -1,0 +1,21 @@
+<% form_for(@signup) do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name, :required => true, :placeholder => 'John Doe',
+                            :autofocus => true %>
+  </p>
+  <p>
+    <%= f.label :email %><br />
+    <%= f.email_field :email, :required => true,
+                              :placeholder => 'john@gmail.com' %>
+  </p>
+  <p>
+    <%= f.label :timeslot_id, 'Time' %><br />
+    <%= f.select :timeslot_id, Timeslot.all.select { |t| t.openings_left > 0 }.map { |t| [t.name, t.id] } %>
+  </p>
+
+  <div class = "uiButton">
+    <%= f.submit 'Submit' %>
+  </div>
+<% end %>
