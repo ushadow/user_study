@@ -47,7 +47,7 @@ class SignupsController < ApplicationController
     respond_to do |format|
       if @signup.save
         flash[:notice] = 'Signup was successfully created.'
-        Emailer.deliver_confirmation(@signup) 
+        Emails.confirmation(@signup).deliver
         format.html { redirect_to(@signup) }
         format.json { render :json => @signup, :status => :created, :location => @signup }
       else
@@ -59,7 +59,7 @@ class SignupsController < ApplicationController
   
   def remind
     @signup = Signup.find(params[:id])
-    Emailer.deliver_reminder(@signup)
+    Emails.reminder(@signup).deliver
     flash[:notice] = "Reminder for #{@signup.email} delivered"
     redirect_to signups_path
   end
