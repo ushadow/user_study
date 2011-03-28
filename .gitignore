@@ -1,4 +1,6 @@
 *~
+.bundle
 .loadpath
-log/*
-tmp/*
+db/*.sqlite3
+log/*.log
+tmp/
