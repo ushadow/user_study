@@ -1,36 +1,36 @@
 class TimeslotsController < ApplicationController
-  before_filter :authenticate
+  config_vars_auth
 
   # GET /timeslots
-  # GET /timeslots.xml
+  # GET /timeslots.json
   def index
     @timeslots = Timeslot.all
 
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @timeslots }
+      format.json { render :json => @timeslots }
     end
   end
 
   # GET /timeslots/1
-  # GET /timeslots/1.xml
+  # GET /timeslots/1.json
   def show
     @timeslot = Timeslot.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
-      format.xml  { render :xml => @timeslot }
+      format.json { render :json => @timeslot }
     end
   end
 
   # GET /timeslots/new
-  # GET /timeslots/new.xml
+  # GET /timeslots/new.json
   def new
     @timeslot = Timeslot.new
 
     respond_to do |format|
       format.html # new.html.erb
-      format.xml  { render :xml => @timeslot }
+      format.json { render :json => @timeslot }
     end
   end
 
@@ -40,7 +40,7 @@ class TimeslotsController < ApplicationController
   end
 
   # POST /timeslots
-  # POST /timeslots.xml
+  # POST /timeslots.json
   def create
     @timeslot = Timeslot.new(params[:timeslot])
 
@@ -48,16 +48,16 @@ class TimeslotsController < ApplicationController
       if @timeslot.save
         flash[:notice] = 'Timeslot was successfully created.'
         format.html { redirect_to(@timeslot) }
-        format.xml  { render :xml => @timeslot, :status => :created, :location => @timeslot }
+        format.json { render :json => @timeslot, :status => :created, :location => @timeslot }
       else
         format.html { render :action => "new" }
-        format.xml  { render :xml => @timeslot.errors, :status => :unprocessable_entity }
+        format.json { render :json => @timeslot.errors, :status => :unprocessable_entity }
       end
     end
   end
 
   # PUT /timeslots/1
-  # PUT /timeslots/1.xml
+  # PUT /timeslots/1.json
   def update
     @timeslot = Timeslot.find(params[:id])
 
@@ -65,23 +65,23 @@ class TimeslotsController < ApplicationController
       if @timeslot.update_attributes(params[:timeslot])
         flash[:notice] = 'Timeslot was successfully updated.'
         format.html { redirect_to(@timeslot) }
-        format.xml  { head :ok }
+        format.json { head :ok }
       else
         format.html { render :action => "edit" }
-        format.xml  { render :xml => @timeslot.errors, :status => :unprocessable_entity }
+        format.json { render :json => @timeslot.errors, :status => :unprocessable_entity }
       end
     end
   end
 
   # DELETE /timeslots/1
-  # DELETE /timeslots/1.xml
+  # DELETE /timeslots/1.json
   def destroy
     @timeslot = Timeslot.find(params[:id])
     @timeslot.destroy
 
     respond_to do |format|
       format.html { redirect_to(timeslots_url) }
-      format.xml  { head :ok }
+      format.json { head :ok }
     end
   end
 end

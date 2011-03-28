@@ -1,4 +1,6 @@
 UserStudy::Application.routes.draw do
+  config_vars
+
   resources :signups do
     member { post :remind }
   end

@@ -1,35 +1,36 @@
 class SignupsController < ApplicationController
-  before_filter :authenticate, :only => :index
+  config_vars_auth :only => :index
+  
   # GET /signups
-  # GET /signups.xml
+  # GET /signups.json
   def index
     @signups = Signup.all(:include => :timeslot, :order => "timeslots.name")
 
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @signups }
+      format.json { render :json => @signups }
     end
   end
 
   # GET /signups/1
-  # GET /signups/1.xml
+  # GET /signups/1.json
   def show
     @signup = Signup.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
-      format.xml  { render :xml => @signup }
+      format.json { render :json => @signup }
     end
   end
 
   # GET /signups/new
-  # GET /signups/new.xml
+  # GET /signups/new.json
   def new
     @signup = Signup.new
 
     respond_to do |format|
       format.html # new.html.erb
-      format.xml  { render :xml => @signup }
+      format.json { render :json => @signup }
     end
   end
 
@@ -39,7 +40,7 @@ class SignupsController < ApplicationController
   end
 
   # POST /signups
-  # POST /signups.xml
+  # POST /signups.json
   def create
     @signup = Signup.new(params[:signup])
 
@@ -48,10 +49,10 @@ class SignupsController < ApplicationController
         flash[:notice] = 'Signup was successfully created.'
         Emailer.deliver_confirmation(@signup) 
         format.html { redirect_to(@signup) }
-        format.xml  { render :xml => @signup, :status => :created, :location => @signup }
+        format.json { render :json => @signup, :status => :created, :location => @signup }
       else
         format.html { render :action => "new" }
-        format.xml  { render :xml => @signup.errors, :status => :unprocessable_entity }
+        format.json { render :json => @signup.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -64,7 +65,7 @@ class SignupsController < ApplicationController
   end
 
   # PUT /signups/1
-  # PUT /signups/1.xml
+  # PUT /signups/1.json
   def update
     @signup = Signup.find(params[:id])
 
@@ -72,23 +73,23 @@ class SignupsController < ApplicationController
       if @signup.update_attributes(params[:signup])
         flash[:notice] = 'Signup was successfully updated.'
         format.html { redirect_to(@signup) }
-        format.xml  { head :ok }
+        format.json { head :ok }
       else
         format.html { render :action => "edit" }
-        format.xml  { render :xml => @signup.errors, :status => :unprocessable_entity }
+        format.json { render :json => @signup.errors, :status => :unprocessable_entity }
       end
     end
   end
 
   # DELETE /signups/1
-  # DELETE /signups/1.xml
+  # DELETE /signups/1.json
   def destroy
     @signup = Signup.find(params[:id])
     @signup.destroy
 
     respond_to do |format|
       format.html { redirect_to(signups_url) }
-      format.xml  { head :ok }
+      format.json { head :ok }
     end
   end  
 end
