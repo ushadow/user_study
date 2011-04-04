@@ -11,7 +11,7 @@
                               :placeholder => 'john@gmail.com' %>
   </p>
   <p>
-    <%= f.label :timeslot_id, 'Time' %><br />
+    <%= f.label :timeslot_id, 'Choose time' %><br />
     <%= f.select :timeslot_id, Timeslot.all.select { |t| t.openings_left > 0 }.map { |t| [t.name, t.id] } %>
   </p>
 

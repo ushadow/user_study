@@ -5,23 +5,17 @@ body {
 	padding: 0;
 }
 
-#header {
-	padding: 20px 0 20px 300px;
+header {
+  width: 960px;
+  margin: auto;
+	padding: 20px 0;
 	font-size: 26px;
 	font-weight: bold;
 	color: #FFFFFF;
 }
 
-#main {
-	background-color: #fff;
-	padding: 2px 300px 45px 300px;
-	margin: auto;
-	border-style: none;
-	min-height: 600px;
-}
-
-#footer {
-	padding: 30px 0 30px 0;
+article{
+  background-color: #fff;
 }
 
 .uiButton  {
@@ -38,12 +32,6 @@ body {
 .uiButton:active {
 	border-color:	#182C45 #182C45 #182C45 #182C45;
 	background-color:	#182C45;
-}
-
-.add_border {
-	border-bottom: 1px solid #CCCCCC;
-	/*max-width: 800px;*/
-	padding: 10px;
 }
 
 .uiButton input {
@@ -128,5 +116,16 @@ a:hover { color: #fff; background-color:#000; }
 #errorExplanation ul li {
   font-size: 12px;
   list-style: square;
+}
+
+section {
+  border-bottom: 1px solid #CCCCCC;
+  padding: 10px 0;
+  width: 960px;
+  margin: auto;
+}
+
+section:last-child {
+  border-bottom: 0;
 }
 
