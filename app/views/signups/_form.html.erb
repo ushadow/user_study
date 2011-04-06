@@ -11,8 +11,13 @@
                               :placeholder => 'john@gmail.com' %>
   </p>
   <p>
-    <%= f.label :timeslot_id, 'Choose time' %><br />
-    <%= f.select :timeslot_id, Timeslot.all.select { |t| t.openings_left > 0 }.map { |t| [t.name, t.id] } %>
+    <%= f.label :timeslot_id, 'Choose a time slot' %><br />
+    <% open_timeslots = Timeslot.open_timeslots %>
+    <% if open_timeslots.empty? %>
+    <p>All time slots are taken. Thank you for your interest!</p>
+    <% else %>
+    <%= f.select :timeslot_id, open_timeslots %>
+    <% end %>
   </p>
 
   <div class = "uiButton">

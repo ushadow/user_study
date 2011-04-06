@@ -28,8 +28,8 @@ ActiveRecord::Schema.define(:version => 20100808000001) do
   end
 
   create_table "timeslots", :force => true do |t|
-    t.string   "name"
-    t.integer  "openings"
+    t.string   "name",                      :null => false
+    t.integer  "openings",   :default => 1, :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

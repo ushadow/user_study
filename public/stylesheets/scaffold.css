@@ -1,21 +1,29 @@
 body { 
-	background-color: #88BBF2; 
-	color: #182C45; 
 	margin: 0;
 	padding: 0;
 }
 
-header {
+header, footer {
+  background-color: #88BBF2;
+}
+
+footer {
+  height: 100%;
+}
+
+header h1 {
   width: 960px;
   margin: auto;
-	padding: 20px 0;
-	font-size: 26px;
-	font-weight: bold;
-	color: #FFFFFF;
+  padding: 20px 6px;
+  font-size: 26px;
+  font-weight: bold;
+  color: #FFFFFF;
 }
 
 article{
   background-color: #fff;
+  width: 960px;
+  margin: auto;
 }
 
 .uiButton  {
@@ -121,8 +129,6 @@ a:hover { color: #fff; background-color:#000; }
 section {
   border-bottom: 1px solid #CCCCCC;
   padding: 10px 0;
-  width: 960px;
-  margin: auto;
 }
 
 section:last-child {
