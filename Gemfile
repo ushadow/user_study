@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.5'
+gem 'rails', '3.0.6'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -23,9 +23,9 @@ gem 'mysql2'
 # gem 'nokogiri'
 # gem 'sqlite3-ruby', :require => 'sqlite3'
 # gem 'aws-s3', :require => 'aws/s3'
-gem 'configvars_rails'
+gem 'configvars_rails', '>= 0.4.3'
 gem 'dynamic_form'
-gem 'jquery-rails'
+gem 'jquery-rails', '>= 0.2.7'
 
 # Bundle gems for the local environment. Make sure to
 # put test-only gems in this group so their generators
