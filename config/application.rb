@@ -41,14 +41,9 @@ module UserStudy
    
     config.action_mailer.delivery_method = :smtp
     config.action_mailer.smtp_settings = {
-      :enable_starttls_auto => true,
-      :tls => true,
-      :address => "smtp.gmail.com",
-      :port => 587,
-      :domain => 'gmail.com',
-      :user_name => "mug.userstudy@gmail.com",
-      :password => "mail_server",
-      :authentication => :plain
+      :address => "outgoing.mit.edu",
+      :port => 25,
+      :domain => "mit.edu",
     }
   end
 end

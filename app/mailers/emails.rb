@@ -1,5 +1,5 @@
 class Emails < ActionMailer::Base
-  default :from => 'yingyin@csail.mit.edu'
+  default :from => 'yingyin@mit.edu'
   
   def confirmation(signup)
     @signup = signup
