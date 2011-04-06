@@ -6,8 +6,9 @@
   <%= javascript_include_tag :defaults %>
 </head>
 <body>
-  <p style="color: green"><%= flash[:notice] %></p>
-
-<%= yield %>
+  <article>
+    <p style="color: green"><%= flash[:notice] %></p>
+    <%= yield %>
+  </article>
 </body>
 </html>
