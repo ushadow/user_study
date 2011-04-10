@@ -2,13 +2,17 @@
   <%= f.error_messages %>
 
   <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name, :placeholder => 'Monday 3/21, 5pm' %>
+  </p>
+  <p>
     <%= f.label :openings %><br />
     <%= f.number_field :openings, :min => 1, :placeholder => '1',
                        :autofocus => true %>
   </p>
   <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name, :placeholder => 'Monday 3/21, 5pm' %>
+    <%= f.label :event %><br />
+    <%= f.number_field :event %>
   </p>
   <p>
     <%= f.submit %>

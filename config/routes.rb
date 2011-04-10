@@ -1,4 +1,6 @@
 UserStudy::Application.routes.draw do
+  resources :events
+
   config_vars
 
   resources :signups do

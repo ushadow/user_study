@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100808000001) do
+ActiveRecord::Schema.define(:version => 20110410224701) do
 
   create_table "config_vars", :force => true do |t|
     t.string "name",  :null => false
@@ -18,6 +18,18 @@ ActiveRecord::Schema.define(:version => 20100808000001) do
   end
 
   add_index "config_vars", ["name"], :name => "index_config_vars_on_name", :unique => true
+
+  create_table "events", :force => true do |t|
+    t.string   "title"
+    t.string   "header"
+    t.string   "event_title"
+    t.string   "requirement"
+    t.string   "location"
+    t.string   "duration"
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "signups", :force => true do |t|
     t.string   "name"

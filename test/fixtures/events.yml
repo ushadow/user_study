@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  title: MyString
+  header: MyString
+  event_title: MyString
+  requirement: MyString
+  location: MyString
+  duration: MyString
+  description: MyString
+
+two:
+  title: MyString
+  header: MyString
+  event_title: MyString
+  requirement: MyString
+  location: MyString
+  duration: MyString
+  description: MyString

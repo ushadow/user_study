@@ -3,7 +3,7 @@ class CreateSignups < ActiveRecord::Migration
     create_table :signups do |t|
       t.string :name
       t.string :email
-      t.integer :timeslot_id
+      t.integer :timeslot_id, :null => false
 
       t.timestamps
     end
